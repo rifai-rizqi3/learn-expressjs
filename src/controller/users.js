@@ -1,10 +1,7 @@
-const getAllUsers = (req, res) => {
-  const data = {
-    id: "1",
-    name: "Rizqi Rifai",
-    email: "rifai.rizqi3@gmail.com",
-    address: "Jakarta Barat",
-  };
+const UsersModel = require("../models/users");
+
+const getAllUsers = async (req, res) => {
+  const data = await UsersModel.getAllUsers();
   res.json({
     message: "GET all Users Successfully",
     data: data,
